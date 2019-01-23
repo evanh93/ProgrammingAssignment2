@@ -1,6 +1,8 @@
-## Creates special list of functions for retrieving cached value of matrix inverse
+## Functions that create a matrix 'x', and calculate and return the inverse of matrix 'x'.
+## The inverse is cached and retrieved if an attempt to solve for the inverse is made again.
 
-## Return a list of functions for retrieving/setting matrix values and its inverse
+## Return list of functions that set and get matrix values and also
+## set and get the inverse of matrix 'x'.
 
 makeCacheMatrix <- function(x = matrix()) {
     mtxInv <- NULL
@@ -19,10 +21,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Return a matrix that is the inverse of 'x' (retrieving previously found
-## cached value if available)
+## Calculates, caches, and returns matrix that is inverse of 'x'. 
+## If inverse matrix was previously cached, returns that matrix.
 
 cacheSolve <- function(x, ...) {
+    # Return a matrix that is the inverse of 'x'
     mtxInv <- x$getInverse()
     
     if (!is.null(mtxInv)) {
