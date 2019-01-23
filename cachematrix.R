@@ -1,6 +1,6 @@
 ## Creates special list of functions for retrieving cached value of matrix inverse
 
-## R Object containing functions for setting/getting matrix values and setting/getting matrix inverse
+## Return a list of functions for retrieving/setting matrix values and its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
     mtxInv <- NULL
